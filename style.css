@@ -1,0 +1,42 @@
+#navbar {
+    overflow: hidden;
+}
+
+#navmid
+{
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0)
+}
+
+#navbar a {
+    display: block;
+    float: left;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    line-height: 10vh;
+
+    background-color: green;
+    color: white;
+    text-decoration: none;
+}
+
+#navbar .selected {
+    background-color: lightgreen;
+    color: black;
+}
+
+#navbar img {
+    float: left;
+    height: 20vh;
+}
+
+#navbar #login{
+    float: right;
+    margin-right: 2vw;
+
+    background-color: white;
+    border: 2px solid green;
+    color: green;
+}
