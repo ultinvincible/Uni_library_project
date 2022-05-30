@@ -26,63 +26,97 @@
             <img src="Resources/750px-Search_Icon.svg.png">
         </a>
     </div>
-    
-    <ul class="books">
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-        <li>
-            <img src="Resources/Placeholder Book.png"><br>
-            Name: Name1<br>
-            Author: Author1<br>
-            Category: Category1<br>
-        </li>
-    </ul>
+
+    <div class="books">
+        <ul>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name1<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name2<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name3<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name4<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name5<br>
+                Author: Author1<br>
+                Category: Category5<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name6<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name7<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name8<br>
+                Author: Author1<br>
+                Category: Category1<br>
+            </li>
+            <li>
+                <img src="Resources/Placeholder Book.png"><br>
+                Name: Name9<br>
+                Author: Author1<br>
+                Category: Category10<br>
+            </li>
+        </ul>
+    </div>
+    <div class="buttons">
+        <button class="prev">&#60</button>
+        <button class="next">&#62</button>
+    </div>
+
+    <script>
+        const prev_btn = document.querySelector(".prev");
+        const next_btn = document.querySelector(".next");
+        const books_list = document.querySelector("ul");
+        let width = books_list.offsetWidth;
+        let index = 0;
+        window.addEventListener("resize", function () {
+            width = books_list.offsetWidth;
+        });
+        next_btn.addEventListener("click", function (e) {
+            e.preventDefault();
+            index = index + 1;
+            // prev_btn.classList.add("show");
+            // if (track.offsetWidth - index * width < index * width) {
+            //     next_btn.classList.add("hide");
+            // }
+            books_list.style.transform = "translateX(" + index * -width + "px)";
+        });
+        prev_btn.addEventListener("click", function () {
+            index = index - 1;
+            // next_btn.classList.remove("hide");
+            // if (index === 0) {
+            //     prev_btn.classList.remove("show");
+            // }
+            books_list.style.transform = "translateX(" + index * -width + "px)";
+        });
+    </script>
 </body>
 
 </html>

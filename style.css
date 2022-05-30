@@ -1,3 +1,7 @@
+:root {
+    --main-color: dodgerblue;
+}
+
 #navbar {
     overflow: hidden;
     width: 90vw;
@@ -6,8 +10,7 @@
     margin-bottom: 2vh;
 }
 
-#navmid
-{
+#navmid {
     margin: 0;
     position: absolute;
     left: 50%;
@@ -24,7 +27,7 @@
     font-size: 150%;
 
     background-color: white;
-    color: dodgerblue;
+    color: var(--main-color);
     text-decoration: none;
 }
 
@@ -38,58 +41,71 @@
     height: 10vh;
 }
 
-#navbar #login{
+#navbar #login {
     float: right;
 
-    /* border: 2px solid dodgerblue; */
     border-radius: 5px;
-    background-color: dodgerblue;
+    background-color: var(--main-color);
     color: white;
 }
 
-.search{
+.search {
     height: 8vh;
     width: 90vw;
     margin-left: 5vw;
     margin-right: 5vw;
 
     border: 2px solid black;
-    border-radius: 30px;
+    border-radius: 8vh;
 }
 
-.search .bar{
+.search .bar {
     height: 100%;
-    width: calc(100% - 10vh);
+    width: calc(100% - 12vh);
+    padding-left: 2vh;
 
     background-color: transparent;
     border: none;
     outline: none;
-    border-radius: inherit;
 
-    text-align: center;
     font-size: 150%;
 }
 
-.search a{
+.search a {
     float: right;
-    padding-right: 1vh;
-    height: 100%;
-    width: fit-content;
+    height: 8vh;
+    width: 8vh;
+
+    border-radius: 8vh;
+    background-color: var(--main-color);
 }
 
-.search a img{
-    height: 100%;
+.search a img {
+    height: 6vh;
     width: auto;
+    padding-top: 1vh;
+    padding-left: 1vh;
 }
 
-.books{
-    overflow-x: auto;
-    margin-left: 5vw;
+.books {
+    margin-left: 10vw;
+    width: 80vw;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.books ul {
+    padding-left: 0;
+    /* width: fit-content; */
+
+    overflow-x: visible;
     white-space: nowrap;
 
     list-style-type: none;
 }
 
-.books li{
+.books ul li {
     display: inline-block;
+    height: 24vw;
+    width: 16vw;
 }
