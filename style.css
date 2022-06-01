@@ -11,6 +11,7 @@
 }
 
 #navmid {
+    display: flex;
     margin: 0;
     position: absolute;
     left: 50%;
@@ -26,7 +27,7 @@
     line-height: 7vh;
     font-size: 150%;
 
-    background-color: white;
+    background-color: transparent;
     color: var(--main-color);
     text-decoration: none;
 }
@@ -36,8 +37,7 @@
     color: black;
 } */
 
-#navbar img {
-    float: left;
+#logo img {
     height: 10vh;
 }
 
@@ -87,25 +87,74 @@
     padding-left: 1vh;
 }
 
+h1 {
+    margin-left: 8vw;
+}
+
+h2 {
+    margin-left: 8vw;
+}
+
 .books {
-    margin-left: 10vw;
+    position: relative;
+    /* hack for buttons absolute positions to work */
+    margin-top: 3vh;
+    margin-left: 8vw;
     width: 80vw;
+}
+
+.book_container {
     overflow: hidden;
+}
+
+.book_list {
+    display: flex;
+    overflow-x: visible;
     transition: transform 0.2s ease-in-out;
 }
 
-.books ul {
-    padding-left: 0;
-    /* width: fit-content; */
+.book_item {
+    align-self: center;
+    padding-right: 1vw;
 
-    overflow-x: visible;
-    white-space: nowrap;
-
-    list-style-type: none;
+    text-decoration: none;
+    color: black;
 }
 
-.books ul li {
-    display: inline-block;
-    height: 24vw;
-    width: 16vw;
+.book_item img {
+    width: 15vw;
+    /* border: 1px solid black; */
+}
+
+.books .buttons button {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-50%);
+    border: none;
+    background-color: transparent;
+    font-size: 200%;
+    --offset: -3vw;
+}
+
+.books .buttons .prev {
+    left: var(--offset);
+}
+
+.books .buttons .next {
+    right: calc(var(--offset) + 2vw);
+}
+
+@media (max-width:800px) {
+    #navmid {
+        flex-direction: column;
+        display: flex;
+    }
+
+    .books .book_list .book_item {
+        font-size: 50%;
+    }
+
+    .books button {
+        font-size: 50%;
+    }
 }
