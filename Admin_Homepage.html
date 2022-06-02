@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="adminheader.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <title>COCO-Uni library</title>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <img src="Resources/Coco-U logo.png" />
+      <span id="navmid">
+        <a href="#" class="selected">Home</a>
+        <a href="#">Manage Borrows</a>
+        <a href="#">Manage Reserves</a>
+        <a href="#">Browse Books</a>
+        <a href="#">Add New Books</a>
+      </span>
+      <a href="#" id="login">Login</a>
+    </div>
+
+    <h2 id="admin-dashboard">DASHBOARD</h2>
+    <div id="book-list-collapsible" role="tablist">
+      <div class="panel panel-default">
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="book-overflow">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum
+            volutpat tellus diam, consequat gravida libero rhoncus ut. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam
+            at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat
+            tellus diam, consequat gravida libero rhoncus ut. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Etiam semper diam at erat
+            pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus
+            diam, consequat gravida libero rhoncus ut.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="book-overflow">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum
+            volutpat tellus diam, consequat gravida libero rhoncus ut. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam
+            at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat
+            tellus diam, consequat gravida libero rhoncus ut. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Etiam semper diam at erat
+            pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus
+            diam, consequat gravida libero rhoncus ut.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <button type="button" class="collapsible">Open Collapsible</button>
+        <div class="book-overflow">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
+            semper diam at erat pulvinar, at pulvinar felis blandit. Vestibulum
+            volutpat tellus diam, consequat gravida libero rhoncus ut. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam
+            at erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat
+            tellus diam, consequat gravida libero rhoncus ut. Lorem ipsum dolor
+            sit amet, consectetur adipiscing elit. Etiam semper diam at erat
+            pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus
+            diam, consequat gravida libero rhoncus ut.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var book = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < book.length; i++) {
+        book[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
