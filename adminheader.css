@@ -93,7 +93,7 @@ body {
   margin: 0 2.5vw;
 }
 
-.active,
+.collapsible .active,
 .collapsible:hover {
   background-color: #555;
 }
@@ -116,7 +116,7 @@ body {
   margin-left: 5px;
 }
 
-.active:after {
+.collapsible .active:after {
   content: "\2796"; /* (-) */
 }
 
