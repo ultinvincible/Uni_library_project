@@ -5,29 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact us</title>
+    <link rel="stylesheet" href="../CSS/global.css">
     <style>
-        body {
-            margin-left: 10vw;
-        }
-
-        hr{
-            margin-right: 10vw;
-        }
-
         #description {
             width: 80vw;
             height: 20vh;
         }
 
-        button {
+        input[type="submit"] {
             color: white;
             background-color: dodgerblue;
-            border-radius: 25px;
+            font-size: 150%;
+            border-radius: 10px;
+            padding: 0 2vw;
 
             position: relative;
             left: 50%;
             transform: translateX(-50%);
+        }
+
+        textarea {
+            resize: none;
         }
     </style>
 </head>
@@ -42,12 +41,12 @@
         Otherwise, if you want to report a problem directly to us,<br>
         please refer to the form below:<br>
         <label>Full name:</label>
-        <input type="text" name="name" id="name"><br>
+        <textarea name="name" id="name" rows="1"></textarea><br>
         <label>Student ID:</label>
-        <input type="text" name="ID" id="ID"><br>
+        <textarea name="ID" id="ID" rows="1"></textarea><br>
         <label>Describe your problem:</label><br>
-        <input type="text" name="description" id="description"><br><br>
-        <button>SUBMIT</button>
+        <textarea name="description" id="description"></textarea><br><br>
+        <input type="submit"></input>
     </form>
 </body>
 
