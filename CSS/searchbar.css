@@ -1,0 +1,15 @@
+.search a {
+    float: right;
+    height: 8vh;
+    width: 8vh;
+
+    border-radius: 8vh;
+    background-color: var(--main-color);
+}
+
+.search a img {
+    height: 6vh;
+    width: auto;
+    padding-top: 1vh;
+    padding-left: 1vh;
+}

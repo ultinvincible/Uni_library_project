@@ -1,5 +1,10 @@
-body
-{
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+    --main-color: dodgerblue;
+}
+
+body {
     margin-left: 10vw;
     font-family: "Montserrat", sans-serif;
 }
