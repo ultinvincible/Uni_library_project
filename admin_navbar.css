@@ -1,0 +1,61 @@
+/* navigation bar */
+
+#navbar {
+  overflow: hidden;
+  width: 100vw;
+  margin-bottom: 2vh;
+  background-color: transparent;
+  border-bottom-style: solid;
+  border-color: dodgerblue;
+  border-width: 1px;
+}
+
+#navmid {
+  margin: 0;
+  position: absolute;
+}
+
+#navbar a {
+  display: block;
+  float: left;
+  padding-left: 1vw;
+  padding-right: 1vw;
+
+  line-height: 6vh;
+  font-size: 125%;
+  border: 1px solid transparent;
+  border-top: none;
+
+  background-color: transparent;
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+#navbar .selected {
+  background-color: gray;
+  color: white;
+}
+
+#navbar a:hover {
+  border-color: dodgerblue;
+  transition: 200ms;
+}
+
+#navbar img {
+  float: left;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  margin-top: 0.5vh;
+  height: 5.5vh;
+}
+
+#navbar #login {
+  float: right;
+  margin-top: 1vh;
+  line-height: 4vh;
+  border-radius: 5px;
+  margin-right: 5vw;
+
+  background-color: var(--main-color);
+  color: white;
+}

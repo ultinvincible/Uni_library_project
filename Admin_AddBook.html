@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/admin_global.css" />
+    <link rel="stylesheet" href="../CSS/admin_navbar.css" />
+    <link rel="stylesheet" href="../CSS/admin_bookeditor.css" />
+    <title>COCO-Uni library</title>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <img src="../Resources/Coco-U logo.png" />
+      <span id="navmid">
+        <a href="#" class="selected">Home</a>
+        <a href="#">Manage Borrows</a>
+        <a href="#">Manage Reserves</a>
+        <a href="#">Browse Books</a>
+        <a href="#">Add New Books</a>
+      </span>
+      <a href="#" id="login">Login</a>
+    </div>
+
+    <h2 id="add-new-book">Add New Book</h2>
+
+    <form>
+        <label>Book name:</label>
+        <textarea name="book" id="book" rows="1"></textarea><br>
+        <label>Author Name:</label>
+        <textarea name="author" id="author" rows="1"></textarea><br>
+        <label>Categories:</label>
+        <textarea name="categories" id="categories" rows="1"></textarea><br>
+        <label>ISBN Code:</label>
+        <textarea name="isbn" id="isbn" rows="1"></textarea><br>
+        <label>Currently in stock:</label>
+        <textarea name="stock" id="stock" rows="1"></textarea><br>
+        <label>Book Description:</label><br>
+        <textarea name="description" id="description"></textarea><br><br>
+        <input type="submit" value="ADD BOOK"></input>
+    </form>
+
+    <script>
+      window.onload = function() {
+        document.getElementsByTagName("textarea").focus();
+      }
+    </script>
+  </body>
+</html>

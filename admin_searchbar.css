@@ -1,0 +1,40 @@
+/* search bar */
+
+.search {
+  height: 4vh;
+  width: 90vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+
+  border: 2px solid black;
+  border-radius: 8vh;
+}
+
+.search .bar {
+  height: 100%;
+  width: calc(100% - 12vh);
+  padding-left: 2vh;
+
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  font-size: 150%;
+}
+
+.search a {
+  float: right;
+  height: 4vh;
+  width: 4vh;
+
+  border-radius: 8vh;
+  background-color: var(--main-color);
+}
+
+.search a img {
+  height: 3vh;
+  width: auto;
+  padding-top: 1vh;
+  padding-left: 1vh;
+}
+
