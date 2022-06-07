@@ -1,11 +1,5 @@
-.logo_cont {
-    display: block;
-    width: 80vw;
-    height: 10vh;
-}
-
 .logo {
-    float: left;
+    padding-right: 70vw;
 }
 
 .logo img {
@@ -48,7 +42,7 @@
     top: 8px;
     right: 9vw;
 
-    border-radius: 5px;
+    border-radius: 1vw;
     background-color: var(--main-color);
     color: white;
 }
@@ -70,28 +64,6 @@
     background-color: gray;
     opacity: 70%;
     z-index: 1;
-}
-
-.search {
-    position: relative;
-    height: 8vh;
-    width: 79vw;
-
-    border: 2px solid black;
-    border-radius: 8vh;
-}
-
-.search .bar {
-    position: absolute;
-    left: 2vw;
-    height: 100%;
-    width: calc(100% - 11vh);
-
-    background-color: transparent;
-    border: none;
-    outline: none;
-
-    font-size: 150%;
 }
 
 @media (max-width:800px) {

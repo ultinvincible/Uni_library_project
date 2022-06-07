@@ -17,6 +17,10 @@ window.addEventListener("resize", function () {
     // });
 });
 
+if (student) {
+    document.querySelector(".login").innerHTML = "Profile";
+}
+
 book_list_list.forEach(books => {
     books.innerWidth = Math.ceil(0.16 * window.innerWidth) * 5;
     books.innerHTML = `
@@ -31,15 +35,16 @@ book_list_list.forEach(books => {
     for (let i = 1; i <= count; i++) {
         let a = document.createElement('a');
         let inner = `
-        <a class="book_item" href="#" onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
-            <div style="position:relative"><img src="../Resources/Placeholder.png">`
+        <a href="#" class="book_item"
+            onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
+            <div style="position:relative">
+                <img src="../Resources/Placeholder.png">`
         if (student)
-            inner = inner + `<button class="reserve">RESERVE</button>\
+            inner = inner + `<button class="reserve">RESERVE</button>
             <button class="details">DETAILS</button>`;
         inner = inner + `</div>
-            Name: Name`+ i + `<br>
+            Title: Title`+ i + `<br>
             Author: Author`+ i + `<br>
-            Category: Category`+ i + `<br>
         </a>`;
         a.innerHTML = inner;
         while (a.children.length > 0) {
@@ -78,12 +83,14 @@ book_list_list.forEach(books => {
 });
 
 function showButtons(item) {
+    if (window.innerWidth < 800) return;
     item.querySelector(".reserve").style.display = "block";
     item.querySelector(".details").style.display = "block";
     item.querySelector("img").style.opacity = 0.5;
 }
 
 function hideButtons(item) {
+    if (window.innerWidth < 800) return;
     item.querySelector(".reserve").style.display = "none";
     item.querySelector(".details").style.display = "none";
     item.querySelector("img").style.opacity = 1;
