@@ -22,7 +22,7 @@ if (student) {
 }
 
 book_list_list.forEach(books => {
-    books.innerWidth = Math.ceil(0.16 * window.innerWidth) * 5;
+    books.innerWidth = Math.ceil(window.innerWidth) * 0.8;
     books.innerHTML = `
     <div class="book_container">
         <div class="book_list"></div>
@@ -34,19 +34,21 @@ book_list_list.forEach(books => {
     //add test items
     for (let i = 1; i <= count; i++) {
         let a = document.createElement('a');
-        let inner = `
-        <a href="#" class="book_item"
-            onmouseover="itemOver(this)" onmouseout="itemOut(this)">
-            <div style="position:relative">
-                <img src="../Resources/Placeholder.png">`
+        let html = `
+        <div class="book_card">
+            <a href="#" class="book_item"
+                onmouseover="itemOver(this)" onmouseout="itemOut(this)">
+                <div style="position:relative">
+                    <img src="../Resources/Placeholder.png">`
         if (student)
-            inner = inner + `<button class="reserve">RESERVE</button>
-            <button class="details">DETAILS</button>`;
-        inner = inner + `</div>
-            Title: Title`+ i + `<br>
-            Author: Author`+ i + `<br>
-        </a>`;
-        a.innerHTML = inner;
+            html = html + `<button class="reserve">RESERVE</button>
+                <button class="details">DETAILS</button>`;
+        html = html + `</div>
+                Title: Title`+ i + `<br>
+                Author: Author`+ i + `<br>
+            </a>
+        </div>`;
+        a.innerHTML = html;
         while (a.children.length > 0) {
             book_list.appendChild(a.children[0]);
         }
@@ -62,8 +64,7 @@ book_list_list.forEach(books => {
         index = index + show;
         if (index == items.length - show) return;
         if (index > items.length - show) index = items.length - show;
-        let rect = items[0].getBoundingClientRect();
-        book_list.style.transform = "translateX(" + index * -(rect.right - rect.left) + "px)";
+        book_list.style.transform = "translateX(" + index * -(document.querySelector(".book_card").offsetWidth) + "px)";
         // prev_btn.classList.add("show");
         // if (track.offsetWidth - index * width < index * width) {
         //     next_btn.classList.add("hide");
@@ -73,8 +74,7 @@ book_list_list.forEach(books => {
         index = index - show;
         if (index == 0) return;
         if (index < 0) index = 0;
-        let rect = items[0].getBoundingClientRect();
-        book_list.style.transform = "translateX(" + index * -(rect.right - rect.left) + "px)";
+        book_list.style.transform = "translateX(" + index * -(document.querySelector(".book_card").offsetWidth) + "px)";
         // next_btn.classList.remove("hide");
         // if (index === 0) {
         //     prev_btn.classList.remove("show");

@@ -35,3 +35,10 @@
     padding-top: 1vh;
     padding-left: 1vh;
 }
+
+@media (max-width:800px)
+{
+    .search .bar{
+        font-size: 150%;
+    }
+}
