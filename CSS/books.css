@@ -2,7 +2,7 @@
     position: relative;
     /* hack for buttons absolute positions to work */
     margin-top: 3vh;
-    width: 79vw;
+    width: 80vw;
 }
 
 .book_container {
@@ -18,7 +18,16 @@
 .book_item {
     position: relative;
     align-self: center;
-    padding-right: 1vw;
+
+    margin-right: 1vw;
+    margin-bottom: 1vw;
+    
+    border: 1px solid black;
+    border-radius: 1vh;
+    box-shadow: 5px 5px;
+
+    padding-top: 1vh;
+    padding-bottom: 1vw;
 
     text-decoration: none;
     color: black;
@@ -26,7 +35,6 @@
 
 .book_item img {
     width: 15vw;
-    /* border: 1px solid black; */
 }
 
 .book_item img:hover {

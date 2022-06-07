@@ -36,7 +36,7 @@ book_list_list.forEach(books => {
         let a = document.createElement('a');
         let inner = `
         <a href="#" class="book_item"
-            onmouseover="showButtons(this)" onmouseout="hideButtons(this)">
+            onmouseover="itemOver(this)" onmouseout="itemOut(this)">
             <div style="position:relative">
                 <img src="../Resources/Placeholder.png">`
         if (student)
@@ -82,18 +82,22 @@ book_list_list.forEach(books => {
     });
 });
 
-function showButtons(item) {
+function itemOver(item) {
     if (window.innerWidth < 800) return;
     item.querySelector(".reserve").style.display = "block";
     item.querySelector(".details").style.display = "block";
     item.querySelector("img").style.opacity = 0.5;
+
+    // item.style.boxShadow = "5px 5px";
 }
 
-function hideButtons(item) {
+function itemOut(item) {
     if (window.innerWidth < 800) return;
     item.querySelector(".reserve").style.display = "none";
     item.querySelector(".details").style.display = "none";
     item.querySelector("img").style.opacity = 1;
+
+    // item.style.boxShadow = "none";
 }
 
 document.querySelector(".sidebar").addEventListener("click", function () {
