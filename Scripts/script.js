@@ -34,21 +34,7 @@ book_list_list.forEach(books => {
     //add test items
     for (let i = 1; i <= count; i++) {
         let a = document.createElement('a');
-        let html = `
-        <div class="book_card">
-            <a href="#" class="book_item"
-                onmouseover="itemOver(this)" onmouseout="itemOut(this)">
-                <div style="position:relative">
-                    <img src="../Resources/Placeholder.png">`
-        if (student)
-            html = html + `<button class="reserve">RESERVE</button>
-                <button class="details">DETAILS</button>`;
-        html = html + `</div>
-                Title: Title`+ i + `<br>
-                Author: Author`+ i + `<br>
-            </a>
-        </div>`;
-        a.innerHTML = html;
+        a.load("book_card.html");
         while (a.children.length > 0) {
             book_list.appendChild(a.children[0]);
         }

@@ -15,7 +15,7 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.book_card{
+.book_card {
     display: flex;
     flex: 0 0 16vw;
 }
@@ -82,7 +82,7 @@
     color: black;
 }
 
-@media (max-width:800px) {
+@media (max-width:899px) {
     .book_item {
         margin: 2vw;
         padding-bottom: 3vh;
