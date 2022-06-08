@@ -23,22 +23,25 @@
       <a href="#" id="login">Login</a>
     </div>
 
-    <h2 id="add-new-book">Add New Book</h2>
+    <h2 id="edit-book">Edit Book:</h2>
 
     <form>
-        <label>Book name:</label>
-        <textarea name="book" id="book" rows="1"></textarea><br>
-        <label>Author Name:</label>
-        <textarea name="author" id="author" rows="1"></textarea><br>
-        <label>Categories:</label>
-        <textarea name="categories" id="categories" rows="1"></textarea><br>
-        <label>ISBN Code:</label>
-        <textarea name="isbn" id="isbn" rows="1"></textarea><br>
-        <label>Currently in stock:</label>
-        <textarea name="stock" id="stock" rows="1"></textarea><br>
-        <label>Book Description:</label><br>
-        <textarea name="description" id="description"></textarea><br><br>
-        <input type="submit" value="ADD BOOK"></input>
+      NOTE: If you do not wish to change a certain section of the book,<br>
+      please leave that section blank:<br><br>
+      <label>Book name:</label>
+      <textarea name="book" id="book" rows="1"></textarea><br>
+      <label>Author Name:</label>
+      <textarea name="author" id="author" rows="1"></textarea><br>
+      <label>Categories:</label>
+      <textarea name="categories" id="categories" rows="1"></textarea><br>
+      <label>ISBN Code:</label>
+      <textarea name="isbn" id="isbn" rows="1"></textarea><br>
+      <label>Currently in stock:</label>
+      <textarea name="stock" id="stock" rows="1"></textarea><br>
+      <label>Book Description:</label><br>
+      <textarea name="description" id="description"></textarea><br><br>
+      <input type="file" id="img" name="img" accept="image/*">
+      <input type="submit" value="CONFIRM CHANGE"></input>
     </form>
 
     <script>
@@ -46,5 +49,6 @@
         document.getElementsByTagName("textarea").focus();
       }
     </script>
+
   </body>
 </html>
