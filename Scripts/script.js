@@ -3,7 +3,7 @@ const student = true;
 let show = 5;
 if (window.innerWidth < 800)
     show = 2;
-const book_list_list = document.querySelectorAll(".books");
+const all_books = document.querySelectorAll(".books");
 console.log(window.innerWidth);
 // let itemWidth = 0.8 / show * window.innerWidth;
 
@@ -11,30 +11,42 @@ window.addEventListener("resize", function () {
     show = 5;
     if (window.innerWidth < 800)
         show = 2;
-    // itemWidth = 0.8 / show * window.innerWidth;
-    // this.document.querySelectorAll(".book_item").forEach(item => {
-    //     item.querySelector("img").width = itemWidth;
-    // });
+    else {
+        this.document.querySelector(".sidebar_cover").style.display = "none";
+    }
 });
 
 if (student) {
     document.querySelector(".login").innerHTML = "Profile";
 }
 
-book_list_list.forEach(books => {
+all_books.forEach(books => {
     books.innerWidth = Math.ceil(window.innerWidth) * 0.8;
     books.innerHTML = `
-    <div class="book_container">
+    <div class="book_view">
         <div class="book_list"></div>
-        <button class="prev">&lt;</button>
-        <button class="next">&gt;</button>
-    </div>`;
+    </div>
+    <button class="prev">&lt;</button>
+    <button class="next">&gt;</button>`;
 
     const book_list = books.querySelector(".book_list");
     //add test items
     for (let i = 1; i <= count; i++) {
         let a = document.createElement('a');
-        a.load("book_card.html");
+        a.innerHTML = `
+        <div class="book_card">
+            <a href="#" class="book_item">
+                <div class="cover">
+                    <img src="../Resources/Placeholder.png">
+                    <button class="reserve">RESERVE</button>
+                    <button class="details">DETAILS</button>
+                </div>
+                <div class="info">
+                    Title: Title`+ i + `<br>
+                    Author: Author`+ i + `<br>
+                </div>
+            </a>
+        </div>`
         while (a.children.length > 0) {
             book_list.appendChild(a.children[0]);
         }
@@ -50,7 +62,7 @@ book_list_list.forEach(books => {
         index = index + show;
         if (index == items.length - show) return;
         if (index > items.length - show) index = items.length - show;
-        book_list.style.transform = "translateX(" + index * -(document.querySelector(".book_card").offsetWidth) + "px)";
+        book_list.style.transform = "translateX(" + index * -(window.innerWidth * 0.8 / show) + "px)";
         // prev_btn.classList.add("show");
         // if (track.offsetWidth - index * width < index * width) {
         //     next_btn.classList.add("hide");
@@ -60,31 +72,13 @@ book_list_list.forEach(books => {
         index = index - show;
         if (index == 0) return;
         if (index < 0) index = 0;
-        book_list.style.transform = "translateX(" + index * -(document.querySelector(".book_card").offsetWidth) + "px)";
+        book_list.style.transform = "translateX(" + index * -(window.innerWidth * 0.8 / show) + "px)";
         // next_btn.classList.remove("hide");
         // if (index === 0) {
         //     prev_btn.classList.remove("show");
         // }
     });
 });
-
-function itemOver(item) {
-    if (window.innerWidth < 800) return;
-    item.querySelector(".reserve").style.display = "block";
-    item.querySelector(".details").style.display = "block";
-    item.querySelector("img").style.opacity = 0.5;
-
-    // item.style.boxShadow = "5px 5px";
-}
-
-function itemOut(item) {
-    if (window.innerWidth < 800) return;
-    item.querySelector(".reserve").style.display = "none";
-    item.querySelector(".details").style.display = "none";
-    item.querySelector("img").style.opacity = 1;
-
-    // item.style.boxShadow = "none";
-}
 
 document.querySelector(".sidebar").addEventListener("click", function () {
     document.querySelector("#navbar").style.display = "flex";
