@@ -35,11 +35,6 @@
     color: black;
 }
 
-.book_item:hover .reserve,
-.book_item:hover .details {
-    display: block;
-}
-
 .book_item:hover img {
     opacity: 0.5;
 }
@@ -98,6 +93,13 @@
     top: 55%;
     background-color: lightgray;
     color: black;
+}
+
+@media (min-width:899px) {
+    .book_item:hover .reserve,
+    .book_item:hover .details {
+        display: block;
+    }
 }
 
 @media (max-width:899px) {
